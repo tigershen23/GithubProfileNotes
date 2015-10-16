@@ -95,11 +95,12 @@ class Main extends React.Component {
           });
         }
       })
-
-    console.log("SUBMITTED", this.state.username);
   }
 
   render() {
+    var showErr = (
+      this.state.error ? <Text>{this.state.error}</Text> : <View></View>
+    );
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}>Search by Github username</Text>
@@ -113,6 +114,11 @@ class Main extends React.Component {
           underlayColor="white">
             <Text style={styles.buttonText}> search </Text>
         </TouchableHighlight>
+        <ActivityIndicatorIOS
+          animating={this.state.isLoading}
+          color="#111"
+          size="large" />
+        {showErr}
       </View>
     );
   }
