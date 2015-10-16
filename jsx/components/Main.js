@@ -73,6 +73,26 @@ class Main extends React.Component {
     this.setState({
       isLoading: true
     });
+    api.getBio(this.state.username)
+      .then((res) => {
+        if (res.message === "Not Found") {
+          this.setState({
+            error: "User not found",
+            isLoading: false,
+          });
+        } else {
+          this.props.navigator.push({
+            title: res.name || "Select an Option",
+            component: Dashboard,
+            passProps: {userInfo: res}
+          })
+          this.setState({
+            isLoading: false,
+            error: false,
+            username: "",
+          });
+        }
+      })
 
     console.log("SUBMITTED", this.state.username);
   }
