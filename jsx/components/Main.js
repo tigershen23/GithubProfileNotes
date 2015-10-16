@@ -1,4 +1,6 @@
 var React = require("react-native")
+var Dashboard = require("./Dashboard")
+var api = require("../utils/api")
 
 var {
   View,
