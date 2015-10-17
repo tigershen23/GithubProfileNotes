@@ -4,7 +4,7 @@ var {
   Text,
   View,
   Image,
-  Stylesheet,
+  StyleSheet,
 } = React
 
 var styles = StyleSheet.create({
