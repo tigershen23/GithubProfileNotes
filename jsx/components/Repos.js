@@ -63,6 +63,7 @@ class Repos extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Badge userInfo={this.props.userInfo} />
+        {list}
       </ScrollView>
     );
   }
