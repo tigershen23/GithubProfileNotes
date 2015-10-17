@@ -13,7 +13,7 @@ var api = {
     username = username.toLowerCase().trim()
     var url = `https://github-profile-notes.firebaseIO.com/${username}.json`
     return fetch(url).then((res) => res.json())
-  }
+  },
   addNote(username, note) {
     username = username.toLowerCase().trim()
     var url = `https://github-profile-notes.firebaseIO.com/${username}.json`

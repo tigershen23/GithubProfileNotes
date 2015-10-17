@@ -1,5 +1,5 @@
 var React = require("react-native")
-var api = require("../Utils/api")
+var api = require("../utils/api")
 var Separator = require("./Helpers/Separator")
 var Badge = require("./Badge")
 
@@ -74,7 +74,7 @@ class Notes extends React.Component {
         api.getNotes(this.props.userInfo.login)
           .then((data) => {
             this.setState({
-              dataSource: this.dataSource.cloneWithRows(data);
+              dataSource: this.dataSource.cloneWithRows(data)
             });
           })
       }).catch((error) => {
